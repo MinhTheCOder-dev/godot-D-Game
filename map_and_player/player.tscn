@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://crda27u2v3kqc"]
+
+[ext_resource type="Script" uid="uid://b5jqsiggmx3dn" path="res://map_and_player/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dvxct5wqbiedv" path="res://Player/player2.png" id="2_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://wis1n4wyuuff" path="res://bullet_scene/gun.tscn" id="3_i3pqv"]
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_onrkg")
+
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("2_i3pqv")
+flip_h = true
+
+[node name="Node2D" parent="." instance=ExtResource("3_i3pqv")]
+position = Vector2(9, 2)
+scale = Vector2(1, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(-1, 1)
+polygon = PackedVector2Array(1, -7, 3, -7, 3, -8, 5, -8, 5, -9, 6, -9, 6, -8, 5, -8, 5, -6, 3, -6, 3, -5, 2, -5, 2, -4, 3, -4, 3, -3, 4, -3, 4, 1, 3, 1, 3, 2, 5, 2, 5, 3, 6, 3, 6, 5, 7, 5, 7, 8, 6, 8, 6, 9, -5, 9, -5, 7, -7, 7, -7, 6, -8, 6, -8, 5, -7, 5, -7, 4, -5, 4, -5, 3, -6, 3, -6, 2, -4, 2, -4, 1, -5, 1, -5, -1, -4, -1, -4, -3, -3, -3, -3, -5, -2, -5, -2, -6, 0, -6, 0, -5, 1, -5)
